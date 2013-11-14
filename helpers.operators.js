@@ -137,11 +137,50 @@ if (typeof Handlebars !== 'undefined') {
     Helpers.removeScope = function(name) {
       delete Helpers.superScope[name];
     };
-    
+
     Helpers.addScope('Session', Session);
     Helpers.addScope('Meteor', Meteor);
 
     Handlebars.registerHelper('$', function() {
       return Helpers.superScope;
+    });
+
+    Handlebars.registerHelper("only", function(max, items) {
+      if (! items || ! max)
+        return false;
+
+      if (_.isArray(items) && items.length === max)
+        return true;
+
+      if (items.hasOwnProperty('collection') && items.count() === max)
+        return true;
+
+      return false;
+    });
+
+    Handlebars.registerHelper("moreThen", function(max, items) {
+      if (! items || ! max)
+        return false;
+
+      if (_.isArray(items) && items.length > max)
+        return true;
+
+      if (items.hasOwnProperty('collection') && items.count() > max)
+        return true;
+
+      return false;
+    });
+
+    Handlebars.registerHelper("lessThen", function(max, items) {
+      if (! items || ! max)
+        return false;
+
+      if (_.isArray(items) && items.length < max)
+        return true;
+
+      if (items.hasOwnProperty('collection') && items.count() < max)
+        return true;
+
+      return false;
     });
 }

@@ -19,7 +19,7 @@ Package.on_test(function (api) {
            'templating',
            'mongo-livedata',
            'domutils',
-           'handlebar-helpers']);
+           'meteor-handlebars-helpers']);
 
   api.add_files(['helpers_tests.html',
                  'helpers_tests.js',

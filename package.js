@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "Handlebar helpers",
+  summary: "Meteor Handlebar helpers",
   internal: true
 });
 
@@ -14,13 +14,13 @@ Package.on_use(function (api) {
 Package.on_test(function (api) {
   api.use(['tinytest',
            'handlebars',
-           'test-helpers', 
-           'session', 
+           'test-helpers',
+           'session',
            'templating',
            'mongo-livedata',
            'domutils',
            'handlebar-helpers']);
-  
+
   api.add_files(['helpers_tests.html',
                  'helpers_tests.js',
                  ], 'client');

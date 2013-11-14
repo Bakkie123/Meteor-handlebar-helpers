@@ -9,10 +9,6 @@ if (typeof Handlebars !== 'undefined') {
       return a && a.length;
     });
 
-    Handlebars.registerHelper('isSelected', function (a, b) {
-      return (a === b)?' selected': '';
-    });
-
     Handlebars.registerHelper('isChecked', function (a, b) {
       return (a === b)?' checked': '';
     });

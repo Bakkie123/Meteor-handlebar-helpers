@@ -4,7 +4,7 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['handlebars', 'session', 'underscore', 'deps'], 'client'); //Needed by helpers for test and live,
+  api.use(['handlebars', 'session', 'ui', 'underscore', 'deps'], 'client'); //Needed by helpers for test and live,
 
   api.export && api.export('Helpers');
 

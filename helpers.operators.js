@@ -10,7 +10,7 @@ if (typeof Handlebars !== 'undefined') {
     });
 
     Handlebars.registerHelper('isChecked', function (a, b) {
-      return (a === b)?' checked': '';
+      return (a === b)?'checked': '';
     });
 
     Handlebars.registerHelper('cutString', function (str, len) {
